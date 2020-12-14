@@ -1,0 +1,18 @@
+server:
+  port: 8888
+
+spring:
+  profiles:
+    active: native # if NOT native - than GIT...
+  security:
+    user:
+      name: user
+      password: password
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared
+        git:
+          uri: ssh://localhost/config-repo
+          clone-on-start: true
